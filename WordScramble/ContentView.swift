@@ -35,9 +35,11 @@ c
 		let trimmed = letter?.trimmingCharacters(in: .whitespacesAndNewlines)
 		
 		let word = "swift"
+		//1. Create a word checker
 		let checker = UITextChecker()
-		
+		//2. Tell how much of the word we want to check.
 		let range = NSRange(location: 0, length: word.utf16.count)
+		//3. Report where the checker found any misspelling in the word.
 		let misspelledRange = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "en")
 		
 		let allGood = misspelledRange.location == NSNotFound
